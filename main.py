@@ -17,11 +17,11 @@ form= '''
                 font: 16px sans-serif;
                 border-radius: 10px;
             }
-            textarea {
+            textarea {{
                 margin: 10px 0;
                 width: 540px;
                 height: 120px;
-            }
+            }}
         </style>
     </head>
     <body>
@@ -32,7 +32,9 @@ form= '''
             <input type="text" name="rot" id="rot" value = "0"/>
             </label> 
             <label>
-            <input type="text" name="text" id="text"/>
+            <input type="text" name="text" id="text">
+                {0}
+            </input>
             </label>
             <input type="submit" value="Submit Query"/>
 
@@ -55,7 +57,7 @@ def encrypted():
 
 @app.route("/")
 def index():
-    return form
+    return form.format{}
 
 
 
